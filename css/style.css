@@ -1,0 +1,541 @@
+:root {
+  --primary: #f53656;
+  --bg: #eff8ff;
+  --sec: #f9e400;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  background-color: var(--bg);
+  color: black;
+  /* min-height: 3000px; */
+}
+
+/* --------navbar start-------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 7%;
+  background-color: rgba(245, 54, 86, 0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+/* --------navbar logo start-------- */
+.navbar .navbar-logo {
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: var(--sec);
+}
+
+.navbar .navbar-logo span {
+  color: #fff;
+}
+/* --------navbar logo end-------- */
+
+/* - */
+
+/* --------navbar menu start-------- */
+.navbar .navbar-nav a {
+  color: white;
+  display: inline-block;
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin: 0 1rem;
+}
+
+.navbar .navbar-nav a:hover {
+  color: var(--sec);
+}
+
+.navbar .navbar-nav a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid var(--sec);
+  transform: scaleX(0);
+  transition: 100ms linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(0.5);
+}
+/* --------navbar menu end-------- */
+
+/* - */
+
+/* --------navbar extra start-------- */
+.navbar .navbar-ext {
+  display: flex;
+  align-items: center;
+}
+
+/* --------Order Now Start-------- */
+.ph-light.ph-whatsapp-logo {
+  font-size: 1.8rem;
+  color: white;
+}
+.navbar .navbar-ext .order a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem 1.5rem;
+  background-color: #02cc08; /* Warna hijau WhatsApp */
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 400;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.navbar .navbar-ext .order a:hover {
+  background-color: #048500;
+}
+/* --------Order Now End-------- */
+
+/* -------- Hamburger Menu Start -------- */
+.navbar .navbar-ext .hamburger-menu a {
+  color: #fff;
+  font-size: 2rem;
+  margin: 0 0, 5;
+}
+
+.navbar .navbar-ext .hamburger-menu a:hover {
+  color: var(--sec);
+}
+
+#hamburger {
+  display: none;
+}
+
+/* Tombol Order Now di dalam hamburger menu hanya tampil di mobile */
+.navbar .navbar-nav .order-mobile {
+  align-items: center;
+  gap: 0.8rem;
+  color: white;
+  border-radius: 1rem;
+  margin: 2rem 1.5rem 1rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.navbar .navbar-nav .order-mobile {
+  display: none;
+}
+
+/* Sembunyikan versi desktop di mobile
+.navbar .navbar-ext .order {
+  display: none;
+} */
+
+/* Tampilkan hanya di layar kecil */
+@media (max-width: 768px) {
+  .order-mobile {
+    display: flex;
+  }
+}
+
+/* -------- Hamburger Menu End -------- */
+
+/* -------- navbar extra end-------- */
+
+/*  */
+
+/*  */
+
+/* -------- Hero Banner Start -------- */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url("../img/hero-banner.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  /* pointer-events: none; */
+  z-index: 10;
+}
+
+.hero .content {
+  padding: 1.4rem 7%;
+  max-width: 80rem;
+}
+
+.hero::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-title {
+  font-size: 4rem;
+  color: #f7f7f7;
+  text-shadow: 1px 1px 3px rgba(1, 1, 1, 0.5);
+}
+
+.hero-title span {
+  color: var(--sec);
+}
+
+.sub-title {
+  color: #f7f7f7;
+  font-size: 1.5rem;
+  margin-top: 0.4rem;
+  line-height: 2rem;
+  font-weight: 400;
+  text-shadow: 1px 1px 3px rgba(1, 1, 1, 0.5);
+}
+
+.hero .content .cta {
+  margin-top: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  gap: 0.8rem;
+  padding: 1.2rem 2rem;
+  font-size: 1.4rem;
+  color: white;
+  background-color: var(--primary);
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px 3px rgba(116, 116, 116, 0.5);
+  font-weight: 400;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  z-index: 100;
+}
+/* -------- Hero Banner End -------- */
+
+/*  */
+
+/*  */
+
+/* -------- About Us Start -------- */
+.about {
+  padding: 7rem 7% 2rem;
+}
+
+.about h2,
+.menu h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--primary);
+}
+
+.about .row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.4rem 7%;
+  /* gap: 8rem; */
+}
+
+.about .row .about-img {
+  flex: 1 1 28rem;
+  /* padding-right: 2rem; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about .row .about-img img {
+  width: 60%;
+}
+
+.about .row .content {
+  flex: 1 1 35rem;
+  padding: 0 1rem;
+}
+
+.about .row .content .judul-about {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about .row .content p {
+  margin-bottom: 0.8rem;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+/* -------- About Us End -------- */
+
+/*  */
+
+/*  */
+
+/* -------- Menu section Start -------- */
+.menu h2 {
+  margin-bottom: 1rem;
+  padding-top: 7rem;
+}
+
+.menu p {
+  text-align: center;
+  max-width: 30rem;
+  margin: auto;
+  font-weight: 400;
+  line-height: 1.5;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.menu .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+  justify-content: center;
+}
+
+.menu .row .menu-card {
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+.menu .row .menu-card img {
+  border-radius: 5%;
+  width: 80%;
+}
+
+.menu .row .menu-card .menu-title {
+  margin: 1rem auto 0.5rem;
+}
+
+.menu .button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.menu .see-more {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  gap: 0.8rem;
+  padding: 1.2rem 2rem;
+  font-size: 1.4rem;
+  background-color: var(--bg);
+  color: var(--primary);
+  outline-style: solid;
+  outline-width: 2px;
+  outline-color: var(--primary);
+  border-radius: 0.5rem;
+  font-weight: 400;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  z-index: 100;
+}
+/* -------- Menu section End -------- */
+
+/*  */
+
+/*  */
+
+/* -------- footer Start -------- */
+footer {
+  background-color: var(--primary);
+  color: white;
+  text-align: center;
+  margin-top: 3rem;
+  padding-top: 2rem;
+}
+
+footer .socials {
+  padding: 0.5rem 0;
+}
+
+footer .socials a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1rem;
+  margin: 1rem;
+  vertical-align: middle;
+}
+
+footer .socials a:hover {
+  color: var(--sec);
+}
+
+footer .socials a .ph.ph-instagram-logo,
+footer .socials a .ph.ph-whatsapp-logo {
+  font-size: 1.5rem;
+  vertical-align: middle;
+}
+
+footer .links {
+  margin-bottom: 3rem;
+}
+
+footer .links a {
+  color: white;
+  padding: 1rem;
+}
+
+footer .credit {
+  padding-bottom: 2rem;
+}
+/* -------- footer end -------- */
+
+/*  */
+
+/*  */
+
+/* -------- Media Queries --------*/
+
+/* -------- Laptop -------- */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+/* -------- Tablet -------- */
+@media (max-width: 768px) {
+  html {
+    font-size: 62.5%;
+  }
+  #hamburger {
+    display: inline-block;
+  }
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: #f3f3f3;
+    width: 25rem;
+    height: 100vh;
+    transition: 0.3s linear;
+  }
+
+  .navbar .navbar-nav .order-mobile {
+    display: flex;
+  }
+
+  .navbar .navbar-ext .order {
+    display: none;
+  }
+
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+
+  .navbar .navbar-nav a,
+  .navbar .navbar-nav .order-mobile {
+    color: black;
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5;
+    font-size: 2rem;
+    font-weight: 500;
+  }
+
+  .navbar .navbar-nav a::after,
+  .navbar .navbar-nav .order-mobile::after {
+    content: "";
+    display: block;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.1rem solid var(--primary);
+    transform: scaleX(0);
+    transition: 100ms linear;
+    transform-origin: 0 0;
+  }
+
+  .navbar .navbar-nav a:hover,
+  .navbar .navbar-nav .order-mobile:hover {
+    color: var(--primary);
+  }
+
+  .navbar
+    .navbar-nav
+    a:hover::after
+    .navbar
+    .navbar-nav
+    .order-mobile:hover::after {
+    transform: scaleX(0);
+    border-bottom: 0.1rem solid var(--primary);
+  }
+
+  .navbar .navbar-ext .order a {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+  }
+
+  .about .row {
+    flex-direction: column;
+  }
+
+  .about .row .about-img img {
+    /* height: 30rem; */
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .about .row .content {
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+
+  .about .row .content p {
+    text-align: justify;
+    margin-bottom: 0.8rem;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  .about .row .judul-about {
+    margin-top: 0.5rem;
+  }
+}
+
+/* -------- Mobile -------- */
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+  #hamburger {
+    display: inline-block;
+  }
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+  }
+  .navbar .navbar-ext .order a {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+  }
+}
+
+/* -------- navbar end-------- */
